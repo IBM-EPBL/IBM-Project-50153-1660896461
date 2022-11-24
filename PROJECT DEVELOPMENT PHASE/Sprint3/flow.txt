@@ -1,0 +1,533 @@
+{
+  "_id": "nodered/flow",
+  "_rev": "64-b1aa24f731b31c48f913126b105242d5",
+  "flow": [
+    {
+      "id": "ec7e2e9737ec53b8",
+      "type": "tab",
+      "label": "Flow 1",
+      "disabled": false,
+      "info": "",
+      "env": []
+    },
+    {
+      "id": "75e4794410a0b872",
+      "type": "tab",
+      "label": "Flow 2",
+      "disabled": false,
+      "info": "",
+      "env": []
+    },
+    {
+      "id": "f8eb191257bcd3c2",
+      "type": "tab",
+      "label": "Flow 3",
+      "disabled": false,
+      "info": "",
+      "env": []
+    },
+    {
+      "id": "e0966616e2cb6d13",
+      "type": "ibmiot",
+      "name": "",
+      "keepalive": "60",
+      "serverName": "",
+      "cleansession": true,
+      "appId": "",
+      "shared": false
+    },
+    {
+      "id": "b961668f91509b50",
+      "type": "ui_tab",
+      "name": "",
+      "icon": "dashboard",
+      "disabled": false,
+      "hidden": false
+    },
+    {
+      "id": "521b75b966dd06f8",
+      "type": "ui_base",
+      "theme": {
+        "name": "theme-light",
+        "lightTheme": {
+          "default": "#0094CE",
+          "baseColor": "#0094CE",
+          "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+          "edited": true,
+          "reset": false
+        },
+        "darkTheme": {
+          "default": "#097479",
+          "baseColor": "#097479",
+          "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+          "edited": false
+        },
+        "customTheme": {
+          "name": "Untitled Theme 1",
+          "default": "#4B7930",
+          "baseColor": "#4B7930",
+          "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+        },
+        "themeState": {
+          "base-color": {
+            "default": "#0094CE",
+            "value": "#0094CE",
+            "edited": false
+          },
+          "page-titlebar-backgroundColor": {
+            "value": "#0094CE",
+            "edited": false
+          },
+          "page-backgroundColor": {
+            "value": "#fafafa",
+            "edited": false
+          },
+          "page-sidebar-backgroundColor": {
+            "value": "#ffffff",
+            "edited": false
+          },
+          "group-textColor": {
+            "value": "#1bbfff",
+            "edited": false
+          },
+          "group-borderColor": {
+            "value": "#ffffff",
+            "edited": false
+          },
+          "group-backgroundColor": {
+            "value": "#ffffff",
+            "edited": false
+          },
+          "widget-textColor": {
+            "value": "#111111",
+            "edited": false
+          },
+          "widget-backgroundColor": {
+            "value": "#0094ce",
+            "edited": false
+          },
+          "widget-borderColor": {
+            "value": "#ffffff",
+            "edited": false
+          },
+          "base-font": {
+            "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+          }
+        },
+        "angularTheme": {
+          "primary": "indigo",
+          "accents": "blue",
+          "warn": "red",
+          "background": "grey",
+          "palette": "light"
+        }
+      },
+      "site": {
+        "name": "Node-RED Dashboard",
+        "hideToolbar": "false",
+        "allowSwipe": "false",
+        "lockMenu": "false",
+        "allowTempTheme": "true",
+        "dateFormat": "DD/MM/YYYY",
+        "sizes": {
+          "sx": 48,
+          "sy": 48,
+          "gx": 6,
+          "gy": 6,
+          "cx": 6,
+          "cy": 6,
+          "px": 0,
+          "py": 0
+        }
+      }
+    },
+    {
+      "id": "ad62a073f3e23d83",
+      "type": "ui_group",
+      "name": "[Child Tracker]Map",
+      "tab": "b961668f91509b50",
+      "order": 1,
+      "disp": true,
+      "width": "6",
+      "collapse": false,
+      "className": ""
+    },
+    {
+      "id": "b68cad5f2bf258fc",
+      "type": "cloudant",
+      "host": "772681f7-ccb2-4c3e-b440-7e206baa965a-bluemix.cloudantnosqldb.appdomain.cloud",
+      "name": "child"
+    },
+    {
+      "id": "ec21f9dcf835d74f",
+      "type": "ibmiot in",
+      "z": "ec7e2e9737ec53b8",
+      "authentication": "apiKey",
+      "apiKey": "e0966616e2cb6d13",
+      "inputType": "evt",
+      "logicalInterface": "",
+      "ruleId": "",
+      "deviceId": "Vaishu",
+      "applicationId": "",
+      "deviceType": "Childsafetygadget",
+      "eventType": "+",
+      "commandType": "",
+      "format": "json",
+      "name": "IBM IoT",
+      "service": "registered",
+      "allDevices": "",
+      "allApplications": "",
+      "allDeviceTypes": "",
+      "allLogicalInterfaces": "",
+      "allEvents": false,
+      "allCommands": "",
+      "allFormats": "",
+      "qos": 0,
+      "x": 170,
+      "y": 40,
+      "wires": [
+        [
+          "576e611e7ca5e38a"
+        ]
+      ]
+    },
+    {
+      "id": "59b8e5b946ca652e",
+      "type": "debug",
+      "z": "ec7e2e9737ec53b8",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "payload",
+      "targetType": "msg",
+      "statusVal": "",
+      "statusType": "auto",
+      "x": 710,
+      "y": 60,
+      "wires": []
+    },
+    {
+      "id": "576e611e7ca5e38a",
+      "type": "function",
+      "z": "ec7e2e9737ec53b8",
+      "name": "function 1",
+      "func": "var name = msg.payload.name;\nvar lat = msg.payload.lat;\nvar lon = msg.payload.lon;\nglobal.set('latitude',lat);\nglobal.set('longitude',lon);\nglobal.set('name',name);\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "initialize": "",
+      "finalize": "",
+      "libs": [],
+      "x": 380,
+      "y": 40,
+      "wires": [
+        [
+          "59b8e5b946ca652e",
+          "e7d0f3f2d4b033e2"
+        ]
+      ]
+    },
+    {
+      "id": "ad3bb621bfbfd481",
+      "type": "debug",
+      "z": "ec7e2e9737ec53b8",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "payload",
+      "targetType": "msg",
+      "statusVal": "",
+      "statusType": "auto",
+      "x": 630,
+      "y": 500,
+      "wires": []
+    },
+    {
+      "id": "e7d0f3f2d4b033e2",
+      "type": "function",
+      "z": "ec7e2e9737ec53b8",
+      "name": "function 2",
+      "func": "msg.payload={\n    'name':global.get('name'),\n    'lat' :global.get('latitude'),\n    'lon' :global.get('longitude')\n}\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "initialize": "",
+      "finalize": "",
+      "libs": [],
+      "x": 220,
+      "y": 120,
+      "wires": [
+        [
+          "291f4800bec2b5d5",
+          "1d7bc4da82a12576"
+        ]
+      ]
+    },
+    {
+      "id": "73d8b272ca8c2a56",
+      "type": "switch",
+      "z": "ec7e2e9737ec53b8",
+      "name": "",
+      "property": "payload",
+      "propertyType": "msg",
+      "rules": [
+        {
+          "t": "false"
+        },
+        {
+          "t": "true"
+        }
+      ],
+      "checkall": "true",
+      "repair": false,
+      "outputs": 2,
+      "x": 90,
+      "y": 380,
+      "wires": [
+        [
+          "19bf62eeb9f6bee5",
+          "87d627b5ddc72d7c"
+        ],
+        [
+          "5ce91a96bde7535f"
+        ]
+      ]
+    },
+    {
+      "id": "19bf62eeb9f6bee5",
+      "type": "function",
+      "z": "ec7e2e9737ec53b8",
+      "name": "function 5",
+      "func": "var d = new Date();\n\nvar utc = d.getTime() + (d.getTimeZoneOffset( ) * 60000)\n\nvar offset = 5.5;\n\nnewDate = new Date(utc +(3600000*offset));\n\nmsg.payload = {\n    \"message\":\"exit\",\n    \"Time\" :newDate.toLocalString(),\n    \"name\" :global.get('name'),\n    \"lat\" :global.get('latitude'),\n    \"lon\" :global.get('longitude'),\n};\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "initialize": "",
+      "finalize": "",
+      "libs": [],
+      "x": 340,
+      "y": 420,
+      "wires": [
+        [
+          "ad3bb621bfbfd481",
+          "dde0fccfc7762724"
+        ]
+      ]
+    },
+    {
+      "id": "5ce91a96bde7535f",
+      "type": "function",
+      "z": "ec7e2e9737ec53b8",
+      "name": "function 6",
+      "func": "var d = new Date();\n\nvar utc = d.getTime() + (d.getTimeZoneOffset( ) * 60000)\n\nvar offset = 5.5;\n\nnewDate = new Date(utc +(3600000*offset));\n\nmsg.payload = {\n    \"message\":\"entry\",\n    \"Time\" :newDate.toLocalString(),\n    \"name\" :global.get('name'),\n    \"lat\" :global.get('latitude'),\n    \"lon\" :global.get('longitude'),\n};\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "initialize": "",
+      "finalize": "",
+      "libs": [],
+      "x": 340,
+      "y": 480,
+      "wires": [
+        [
+          "ad3bb621bfbfd481"
+        ]
+      ]
+    },
+    {
+      "id": "fe7c104fc469471a",
+      "type": "ui_toast",
+      "z": "ec7e2e9737ec53b8",
+      "position": "dialog",
+      "displayTime": "3",
+      "highlight": "",
+      "sendall": true,
+      "outputs": 1,
+      "ok": "OK",
+      "cancel": "",
+      "raw": false,
+      "className": "",
+      "topic": "",
+      "name": "",
+      "x": 770,
+      "y": 360,
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "4264b4e78358de0b",
+      "type": "http request",
+      "z": "ec7e2e9737ec53b8",
+      "name": "",
+      "method": "GET",
+      "ret": "txt",
+      "paytoqs": "ignore",
+      "url": "",
+      "tls": "",
+      "persist": false,
+      "proxy": "",
+      "authType": "",
+      "senderr": false,
+      "x": 790,
+      "y": 280,
+      "wires": [
+        [
+          "2c67a211dcd5b6f7"
+        ]
+      ]
+    },
+    {
+      "id": "2c67a211dcd5b6f7",
+      "type": "debug",
+      "z": "ec7e2e9737ec53b8",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "false",
+      "statusVal": "",
+      "statusType": "auto",
+      "x": 730,
+      "y": 160,
+      "wires": []
+    },
+    {
+      "id": "d826f3549e158cbc",
+      "type": "function",
+      "z": "ec7e2e9737ec53b8",
+      "name": "function 3",
+      "func": "msg.payload=msg.location.inarea\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "initialize": "",
+      "finalize": "",
+      "libs": [],
+      "x": 300,
+      "y": 200,
+      "wires": [
+        [
+          "adfd5fd71fdaf2ca"
+        ]
+      ]
+    },
+    {
+      "id": "adfd5fd71fdaf2ca",
+      "type": "rbe",
+      "z": "ec7e2e9737ec53b8",
+      "name": "RBE",
+      "func": "rbe",
+      "gap": "",
+      "start": "",
+      "inout": "out",
+      "septopics": true,
+      "property": "payload",
+      "topi": "topic",
+      "x": 450,
+      "y": 160,
+      "wires": [
+        [
+          "73d8b272ca8c2a56"
+        ]
+      ]
+    },
+    {
+      "id": "291f4800bec2b5d5",
+      "type": "geofence",
+      "z": "ec7e2e9737ec53b8",
+      "name": "geofence",
+      "mode": "circle",
+      "inside": "true",
+      "rad": 342636.9569173728,
+      "points": [],
+      "centre": {
+        "latitude": 50.13598469313195,
+        "longitude": -3.07342529296875
+      },
+      "floor": "",
+      "ceiling": "",
+      "worldmap": true,
+      "outputs": 2,
+      "x": 120,
+      "y": 200,
+      "wires": [
+        [
+          "d826f3549e158cbc"
+        ],
+        []
+      ]
+    },
+    {
+      "id": "dde0fccfc7762724",
+      "type": "cloudant out",
+      "z": "ec7e2e9737ec53b8",
+      "name": "child",
+      "cloudant": "b68cad5f2bf258fc",
+      "database": "tracker",
+      "service": "node-red-cikhd-2022--cloudant-1668167443758-16711",
+      "payonly": true,
+      "operation": "insert",
+      "x": 730,
+      "y": 420,
+      "wires": []
+    },
+    {
+      "id": "87d627b5ddc72d7c",
+      "type": "function",
+      "z": "ec7e2e9737ec53b8",
+      "name": "function 4",
+      "func": "msg.payload=msg.payload.command\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "initialize": "",
+      "finalize": "",
+      "libs": [],
+      "x": 400,
+      "y": 360,
+      "wires": [
+        [
+          "2c67a211dcd5b6f7",
+          "4264b4e78358de0b",
+          "fe7c104fc469471a"
+        ]
+      ]
+    },
+    {
+      "id": "1d7bc4da82a12576",
+      "type": "ui_worldmap",
+      "z": "ec7e2e9737ec53b8",
+      "group": "ad62a073f3e23d83",
+      "order": 0,
+      "width": "0",
+      "height": "0",
+      "name": "worldmap",
+      "lat": "13.1459976",
+      "lon": "80.0619303",
+      "zoom": "16",
+      "layer": "OSMG",
+      "cluster": "17",
+      "maxage": "",
+      "usermenu": "show",
+      "layers": "show",
+      "panit": "false",
+      "panlock": "false",
+      "zoomlock": "false",
+      "hiderightclick": "false",
+      "coords": "none",
+      "showgrid": "false",
+      "showruler": "false",
+      "allowFileDrop": "true",
+      "path": "/name",
+      "overlist": "DR,CO,DN,HM",
+      "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
+      "mapname": "",
+      "mapurl": "",
+      "mapopt": "",
+      "mapwms": false,
+      "x": 600,
+      "y": 120,
+      "wires": []
+    }
+  ]
+}
